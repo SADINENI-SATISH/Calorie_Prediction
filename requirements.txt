@@ -1,0 +1,7 @@
+opencv-python-headless
+pybase64
+altair
+pandas
+streamlit
+tensorflow
+Pillow

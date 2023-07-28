@@ -1,0 +1,5 @@
+{0:'Biryani 400-500 cals',
+1:'Burger 250-300 cals',
+2:'Fries 300-350 cals',
+3:'PizzaSlice_250_300 cals',
+4:'Wholepizza_1200_1500 cals'}
