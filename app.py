@@ -29,7 +29,18 @@ def process_image(img):
         return processed_img
 
 def main():
-    st.title("Calorie Prediction")
+    st.title("Calorie Vision")
+    st.markdown(
+        """
+        <style>
+        .stApp h1 {
+            color: white;
+            font-size: 36px;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
     img = st.file_uploader('Insert your image', type=['png'])
     processed_img = process_image(img)  # Use a different variable name here
     result = ""
