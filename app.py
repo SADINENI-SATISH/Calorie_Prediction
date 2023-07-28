@@ -20,18 +20,18 @@ def predict_class(img):
 def process_image(img):
     if img is not None:
         image = Image.open(img)
-        img = np.array(image)
-        img = cv2.resize(img, (224, 224))  # Resize the image to 224x224
-        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)  # Convert image to RGB format
+        processed_img = np.array(image)
+        processed_img = cv2.resize(processed_img, (224, 224))  # Resize the image to 224x224
+        processed_img = cv2.cvtColor(processed_img, cv2.COLOR_BGR2RGB)  # Convert image to RGB format
         st.image(image, caption="Uploaded Image", use_column_width=True)
-        img = img / 255.0  # Normalize pixel values to [0, 1]
-        img = img.reshape(1, 224, 224, 3)
-        return img
+        processed_img = processed_img / 255.0  # Normalize pixel values to [0, 1]
+        processed_img = processed_img.reshape(1, 224, 224, 3)
+        return processed_img
 
 def main():
     st.title("Calorie Prediction")
     img = st.file_uploader('Insert your image', type=['png'])
-    img = process_image(img)
+    processed_img = process_image(img)  # Use a different variable name here
     result = ""
 
     # Background image
@@ -50,7 +50,7 @@ def main():
     )
 
     if st.button("Predict"):
-        result = predict_class(img)
+        result = predict_class(processed_img)  # Use the processed_img here
         classes_file = open("Calories.txt", "r")
         classes = ast.literal_eval(classes_file.read())
         classes_file.close()
