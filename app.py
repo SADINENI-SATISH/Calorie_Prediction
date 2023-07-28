@@ -58,7 +58,7 @@ def main():
         predicted_food = classes[predicted_classes]
 
         # Display the predicted food name in bold and black
-        st.markdown(f"<span style='color: black; font-weight: bold;'>The food is: {predicted_food}</span>", unsafe_allow_html=True)
+        st.markdown(f"<span style='color: white; font-weight: bold;'>The food is: {predicted_food}</span>", unsafe_allow_html=True)
 
 if __name__ == '__main__':
     main()
