@@ -55,9 +55,10 @@ def main():
         classes = ast.literal_eval(classes_file.read())
         classes_file.close()
         predicted_classes = np.argmax(result)
-        result = classes[predicted_classes]
+        predicted_food = classes[predicted_classes]
 
-    st.success('The sign is $ {}'.format(result))
+        # Display the predicted food name in bold and black
+        st.markdown(f"<span style='color: black; font-weight: bold;'>The food is: {predicted_food}</span>", unsafe_allow_html=True)
 
 if __name__ == '__main__':
     main()
